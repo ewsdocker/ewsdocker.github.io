@@ -250,26 +250,6 @@
 		//      Now add a new animation image block
 		//
 		/////////////////////////////////////////////////////////////////////////////
-/*
-		createAnimationFrame('idImage2',                     // aFrameId
-					   		 'castle', 				   	       // aFrameName
-					   		 'image',				   	       // aFrameType
-					   		 null,						   	   // aFrameCallback
-					   		 'imageInit(tableIndex)',          // aFrameInit
-					   		 'idBox2',				   	   // aFrameParent
-					   		 iconDir + 'Castle.gif',  		   // aFrameContentUrl
-					   		 'store.html',				   	   // aFrameContentLink
-					   		 false,						   	   // aFrameVisible
-					   		 '#000000',					   	   // aFrameColor
-					   		 'transparent',				   	   // aFrameBackground
-					   		 null, 	   						   // aFrameBackgroundUrl
-					   		 0,			   				   	   // aFrameX
-					   		 0,							   	   // aFrameY
-					   		 10,						   	   // aFrameZ
-					   		 200,				   	   		   // aFrameW
-					   		 226,				   	   		   // aFrameH
-					   		 null);						   	   // aFrameParams
-*/
 		createAnimationFrame('idImage2',                     // aFrameId
 					   		 'castle', 				   	       // aFrameName
 					   		 'image',				   	       // aFrameType

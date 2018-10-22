@@ -1,364 +1,992 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
   <head>
-	<title>Jay Wheeler's Projects</title>
+    <title>ewsdocker - Open Source Docker Containers</title>
+    <meta name="author" content="Jay" />
+    <meta http-equiv="Content-Type" 
+          content="text/html; charset=iso-8859-1" />
+    <meta name="description" 
+	  content="Open Source Software (OSS) Docker Container projects, freeware software, documentation, user guide's and technical guides" />
+    <meta name="keywords" 
+	  content="open source software docker container freeware documentation guides technical earthwalk linux debian alpine ubuntu centos fedora" />
 
-	<meta name="author" content="Jay" />
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- 
+  	<link rel="stylesheet" type="text/css" href="css/layoutMaster.css" />
+-->
 
-	<link rel="stylesheet" href="../style.css" type="text/css" />
+    <style>
+    <!-- ------------------- -->
+    <!--        body         -->
+    <!-- ------------------- -->
+      #body 
+      {
+       margin-top: 0px;
+       margin-left: 0px;
+       margin-right: 0px;
+       margin-bottom: 0px;
+      }
+	    
+      .body 
+      {
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size: 11px;
+       font-weight: bold;
+       text-decoration:none;
+       color: #000099;
+      }
+	    
+      .body a
+      {
+       text-decoration:none;
+      }
+	    
+      .body a:visited
+      {
+       text-decoration:none;
+      }
+	    
+      .body a:hover
+      {
+       color: inherit;
+       text-decoration:underline;
+      }
+	    
+    </style>
+
+    <!-- ------------------------- -->
+    <!--       page header         -->
+    <!-- ------------------------- -->
+    <style>
+
+      #header
+      {
+       width: 800px;
+       position:relative; 
+       height: 162px;
+       background-image:url(images/header.jpg);
+       background-repeat:no-repeat;
+      }
+
+      #headerDocker 
+      {
+       position:absolute;
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       color: #FFFFFF;
+       font-size:30px;
+       font-weight:bold;
+       margin-top:25px;
+       margin-left:430px;
+       left: 0px;
+       top: 0px;
+      }
+
+      #headerDockerOSS 
+      {
+       position:absolute;
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       color: #FFFFFF;
+       font-size: 21px;
+       font-weight: bold;
+       margin-top:60px;
+       margin-left:360px;
+       left: 0px;
+       top: 0px;
+      }
+
+      #headerCompany 
+      {
+       position:absolute;
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       color: #FFFFFF;
+       font-size: 20px;
+       font-weight: bold;
+       margin-top:10px;
+       margin-left:20px;
+       left: 0px;
+       top: 0px;
+      }
+
+      #headerCompanySm 
+      {
+       position:absolute;
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       color: #FFFFFF;
+       font-size: 14px;
+       font-weight: bold;
+       margin-top:35px;
+       margin-left:45px;
+       left: 0px;
+       top: 0px;
+      }
+
+      #headerMenu
+      {
+       position:absolute;
+       bottom: 20px;
+       right: 30px;
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size: 10px;
+       font-weight: normal;
+       color: #000099;
+      }
+
+      #headerMenu a
+      {
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size: 10px;
+       font-weight: bold;
+       color:#000099;
+       text-decoration:none;
+      }
+
+      #headerMenu a:hover
+      {
+       color:#7DA5E0;
+       text-decoration:none;
+      }
+
+    </style>
+
+    <!-- ------------------- -->
+    <!--      leftpanel      -->
+    <!-- ------------------- -->
+    <style>
+
+      #leftpanel
+      {
+       float:left;
+       width:200px;
+      }
+
+      .leftMenuTop
+      {
+       width: 204px; 
+       height: 27px;
+       background-image:url(images/table_top.jpg);
+       background-repeat:no-repeat;
+      }
+
+      .leftMenuBottom
+      {
+       width: 204px; 
+       height: 23px;
+      }
+
+      .leftMenuPanel 
+      {
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size: 14px;
+       font-weight: bold;
+      }
+
+      .leftMenuContent
+      {
+       width: 204px;
+       background-image:url(images/table_content.jpg);
+       background-repeat:repeat-y;
+      }
+
+      .leftTitle
+      {
+       margin-left:15px;
+       margin-right:15px;
+       text-align:center;
+       text-decoration:underline;
+       font-size: 12px;
+       font-weight: bold;
+      }
+
+      .leftTitle.left
+      {
+       margin-left:15px;
+       margin-right:15px;
+       text-align:left;
+       text-decoration:underline;
+       font-size: 12px;
+       font-weight: bold;
+      }
+
+      .leftSubTitle
+      {
+       margin-left:18px;
+       margin-right:18px;
+       text-align:center;
+       text-decoration:underline;
+       font-size: 12px;
+       font-weight: bold;
+      }
+
+      .leftSubTitle.left
+      {
+       margin-left:18px;
+       margin-right:18px;
+       text-align:left;
+       text-decoration:underline;
+       font-size: 12px;
+       font-weight: bold;
+      }
+
+      .leftMenuText
+      {
+       margin-left:15px;
+       margin-right:15px;
+       text-align:left;
+       font-size: 12px;
+       font-weight:bold;
+      }
+
+      .leftMenuText.indent
+      {
+       margin-left:18px;
+       margin-right:18px;
+      }
+
+      .leftMenuText a
+      {
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size: 12px;
+       font-weight: normal;
+       text-decoration:none;
+       color:inherited;
+      }
+
+      .leftMenuText a:hover
+      {
+       font-weight: bold;
+       font-size: 12px;
+       text-decoration:underline;
+       color:inherited;
+      }
+
+      .leftMenuText a:visited
+      {
+       text-decoration:none;
+       color:inherited;
+      }
+
+    </style>
+
+    <!-- ------------------- -->
+    <!--      content        -->
+    <!-- ------------------- -->
+    <style>
+
+        #content
+        {
+         width: 800px;
+        }
+
+        #contentText
+        {
+         float:right;
+         width: 580px;
+        }
+
+    </style>
+
+    <!-- ------------------- -->
+    <!--        title        -->
+    <!-- ------------------- -->
+    <style>
+	    
+      .title
+      {
+       font-family: Verdana, Arial, Helvetica, sans-serif; 
+       font-weight: bold; 
+       font-size: 26px; 
+       color: #7DA5E0; 
+      }
+	    
+    </style>
+
+    <!-- ----------------------- -->
+    <!--       subtitle          -->
+    <!-- ----------------------- -->
+    <style>
+	    
+      .subtitle
+      {
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size:18px;
+       font-weight: bold;
+       text-decoration:none;
+      }
+
+      .subtitle a
+      {
+       text-decoration:none;
+       color: #CCCCCC;
+      }
+
+      .subtitle a:hover
+      {
+       text-decoration:underline;
+       color:#000099;
+      }
+	    
+    </style>
+
+    <!-- ----------------------- -->
+    <!--   Construction Banner   -->
+    <!-- ----------------------- -->
+    <style>
+
+      #construction
+      {
+       align:center;
+       padding: 15px;
+       padding-top: 20px;
+       font-weight: bold;
+       font-size: 14px;
+       font-family: Verdana, Arial, sans-serif;
+      }
+
+      .construction
+      {
+       position:relative; 
+       align:center;
+      }
+
+    </style>
+
+    <!-- ------------------- -->
+    <!--      li             -->
+    <!-- ------------------- -->
+    <style>
+	    
+      li.disc
+      {
+       list-style-type: disc;
+      }
+
+      li.indent
+      {
+       list-style-type: none;
+      }
+
+      li.indent2
+      {
+       list-style-type: none;
+       margin-left: 24px;
+      }
+
+      li.numbers
+      {
+       list-style-type: decimal;
+      }
+
+    </style>
+
+    <!-- ------------------- -->
+    <!--      footer         -->
+    <!-- ------------------- -->
+    <style>  
+	    
+      .footer
+      {
+       width: 779px;
+       height: 32px;
+       background-image:url(images/bg_footer.gif);
+       background-repeat:no-repeat;
+       clear:both;
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size: 9px;
+       font-weight: bold;
+       color:#FFFFFF;
+      }
+	    
+      .footer a
+      {
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size: 9px;
+       font-weight: bold;
+       color:#000099;
+       text-decoration:none;
+      }
+	    
+      .footer a:hover
+      {
+       color:#FFFFFF;
+       text-decoration:none;
+      }
+	    
+      .copyright
+      {
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size: 8px;
+       font-weight: bold;
+       color:#ffffff;
+      }
+	    
+    </style>
+
+    <!-- ------------------- -->
+    <!--       block         -->
+    <!-- ------------------- -->
+    <style>
+	    
+      .undecorated
+      {
+       text-decoration:none;
+      }
+	    
+      .undecorated a
+      {
+       text-decoration:none;
+      }
+	    
+      .undecorated a:visited
+      {
+       text-decoration:none;
+      }
+	    
+      .undecorated a:hover
+      {
+       font-weight:bold;
+       text-decoration:none;
+      }
+	    
+    </style>
+
+    <!-- ------------------- -->
+    <!--       block         -->
+    <!-- ------------------- -->
+    <style>
+	    
+      .block
+      {
+       padding: 15px;
+       padding-top: 20px;
+       font-weight: normal;
+       font-size: 14px;
+       font-family: Verdana, Arial, sans-serif;
+      }
+	    
+      .block a
+      {
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size: 14px;
+       font-weight: bold;
+       text-decoration:none;
+      }
+	    
+      .block a:hover
+      {
+       font-size: 14px;
+       text-decoration:none;
+      }
+	    
+      .blockHighlight
+      {
+       font-weight: bold;
+       font-size: 14px;
+      }
+
+      .blockNotice
+      {
+       padding: 20px;
+       font-family: Verdana, Arial, sans-serif;
+       border-style: solid;
+       border-width: 2px;
+      }
+	    
+      #blockCentered
+      {
+       text-align:center;
+      }
+	    
+      .blockCentered a
+      {
+       color:inherited;
+       font-weight: bold;
+       text-decoration:none;
+      }
+	    
+      .blockCentered a:visited
+      {
+       color:inherited;
+       font-weight: bold;
+       text-decoration:none;
+      }
+	    
+      .blockCentered a:hover
+      {
+       color:inherited;
+       font-weight: bold;
+       text-decoration:underlined;
+      }
+	    
+    </style>
+
+    <!-- ---------- -->
+    <!--    block   -->
+    <!-- ---------- -->
+    <style>
+	    
+       .border
+      {
+       border-style: solid;
+       border-width: 1px;
+       border-color: #000000;
+      }
+
+      .background
+      {
+       background-color: #FFFFFF;
+      }
+
+    </style>
+
+    <!-- ---------------- -->
+    <!--    blockColors   -->
+    <!-- ---------------- -->
+    <style>
+	    
+      .gray
+      {
+       color:#CCCCCC;
+      }
+
+      .green
+      {
+       color:#008700;
+      }
+
+      .darkGreen
+      {
+       color: #037D31;
+      }
+
+      .blue
+      {
+       color: #000099;
+      }
+
+      .dockerBlue
+      {
+       color:#2089C4;
+      }
+
+      .githubBlue
+      {
+       color:#0366D6;
+      }
+
+      .phpBlue
+      {
+       color:#6082BB;
+      }
+
+      .ewsBlue
+      {
+       color: #7DA5E0; 
+      }
+
+      .orange
+      {
+       color: #F97237;
+      }
+
+      .black
+      {
+       color:#000000;
+      }
+
+      .red
+      {
+       color:#DC0000;
+      }
+
+    </style>
+
+    <!-- ----------------- -->
+    <!--    blockBorders   -->
+    <!-- ----------------- -->
+    <style>
+	    
+      .green.border
+      {
+       border-color: #008700;
+      }
+
+      .blue.border
+      {
+       border-color: #000099;
+      }
+
+       .orange.border
+      {
+       border-color: #F97237;
+      }
+
+      .black.border
+      {
+       border-color: #000000;
+      }
+
+      .red.border
+      {
+       border-color: #DC0000;
+      }
+
+      .burgandy
+      {
+       color:#740000;
+      }
+
+      .burgandy.border
+      {
+       border-color: #740000;
+      }
+
+    </style>
+
+    <!-- --------------------- -->
+    <!--    blockBackgrounds   -->
+    <!-- --------------------- -->
+    <style>
+      .green.border.background
+      {
+       background-color: #ECFDF1;
+      }
+
+     .blue.border.background
+      {
+       background-color: #EDE8F6;
+      }
+
+     .orange.border.background
+      {
+       background-color:#F9DFD3;
+      }
+	    
+     .black.border.background
+      {
+       background-color:#CCCCCC;
+      }    
+
+      .red.border.background
+      {
+       background-color: #F6E6E9;
+      }
+	    
+      .burgandy.border.background
+      {
+       background-color:#F0D9E2;
+      }
+
+    </style>
   </head>
-
   <body>
 
-	<div id="page" align="center">
+<!-- ------------------------ -->
+<!--     The whole page       -->
+<!-- ------------------------ -->
+    <div id="body" align="center">
 
-		<div id="header">
-			<div id="companyname" align="left">Jay Wheeler</div>
-			<div align="right" id="menu"><a href="../index.html">Home</a> | <a 
-                                            href="../Documents">Documents</a>
+    <!-- ---------------- -->
+    <!--     Header       -->
+    <!-- ---------------- -->
+      <div id="header">
+
+        <div id="headerCompany" align="left"><span class="githubBlue">EarthWalk Software</span></div>
+        <div id="headerCompanySm" align="left"><span class="githubBlue">and Consulting</span></div>
+
+        <div id="headerDocker" align="left"><span class="blue">ewsdocker</span></div>
+        <div id="headerDockerOSS" align="left"><span class="blue">Open Source Docker Containers</span></div>
+
+        <div id="headerMenu" align="right"><a 
+	         href="https://hub.docker.com/u/ewsdocker/">Docker Hub</a> | <a 
+             href="https://github.com/ewsdocker?tab=repositories">Git Hub</a> | <a 
+             href="https://github.com/ewsdocker/ewsdocker.github.io/wiki">Wiki</a>
+        </div>
+
+      </div>
+    <!-- --------------- -->
+    <!--    EndHeader    -->
+    <!-- --------------- -->
+
+    <br />
+
+    <!-- ---------------- -->
+    <!--     Content      -->
+    <!-- ---------------- -->
+      <div id="content">
+
+      <!-- ------------------- -->
+      <!--    Left Panel       -->
+      <!-- ------------------- -->
+        <div id="leftpanel">
+
+        <!-- --------------------- -->
+        <!--    Left Panel Menu    -->
+        <!-- --------------------- -->
+        <!--     Development       -->
+        <!-- --------------------- -->
+          <div class="leftMenuTop">
+            <span class="leftMenuPanel blue">Repositories</span>
+          </div>
+
+          <div class="leftMenuContent">
+
+            <div class="leftMenuText black">
+
+              <br />
+
+              <a class="black" href="https://hub.docker.com/u/ewsdocker/">Docker Hub</a><br />
+              <a class="black" href="https://github.com/ewsdocker?tab=repositories">Git Hub</a><br />
+              <a class="black" href="https://github.com/ewsdocker/ewsdocker.github.io/wiki">Wiki Documents</a><br />
+
             </div>
-		</div>
 
-		<br />
+          </div>
 
-		<div id="content">
+          <div class="leftMenuBottom black">
+            <img src="images/table_bottom.jpg" width="204" height="23" border="0" alt="" />
+          </div> 
+        <!-- --------------------- -->
+        <!--    Left Panel Menu    -->
+        <!-- --------------------- -->
 
-			<div id="leftpanel">
+          <br />
 
-				<div class="table_top">
-					<span class="title_panel">Contents</span>
-				</div>
+        <!-- --------------------- -->
+        <!--    Left Panel Menu    -->
+        <!-- --------------------- -->
+        <!--     Alpine Linux      -->
+        <!-- --------------------- -->
+          <div class="leftMenuTop">
+            <span class="leftMenuPanel darkGreen">Alpine Linux</span>
+          </div>
 
-				<div class="table_content">
-					<div class="table_text">
-						<span class="news_more"><a href="../index.html">Home</a></span><br />
-						<span class="news_more"><a href="../Documents">Documents</a></span><br />
-						<br />
-					</div>
-				</div>
+          <div class="leftMenuContent darkGreen">
 
-				<div class="table_bottom">
-					<img src="../images/table_bottom.jpg" width="204" height="23" border="0" alt="" />
-				</div>
+            <div class="leftMenuText">
 
-				<br />
+              <br />
 
-				<div class="table_top">
-					<span class="title_panel">Projects</span>
-				</div>
+              <a class="darkGreen" href="http://ewsdocker.github.io/alpine-base">alpine-base</a><br />
+              <a class="darkGreen" href="http://ewsdocker.github.io/alpine-htop">alpine-htop</a><br />
 
-				<div class="table_content">
-					<div class="table_text">
-						<span class="news_more"><a href="http://taxestimator.sourceforge.net/" target="_blank">taxEstimator</a></span><br />
-						<span class="news_more"><a href="http://taxengine.sourceforge.net/original/" target="_blank">taxEngine</a></span><br />
-						<span class="news_more"><a href="http://cgidictionary.sourceforge.net/" target="_blank">dictionary</a></span><br />
-						<span class="news_more"><a href="http://ewsperl.sourceforge.net/" target="_blank">ewsperl</a></span><br />
-						<span class="news_more"><a href="#HauntedHollow" target="_top">Haunted Hollow</a></span><br />
-						<br />
-					</div>
-				</div>
+              <br />
+              <a class="darkGreen" href="http://ewsdocker.github.io/alpine-nginx">alpine-nginx</a><br />
+              <a class="darkGreen" href="http://ewsdocker.github.io/alpine-nginx-client">alpine-nginx-client</a><br />
 
-				<div class="table_bottom">
-					<img src="../images/table_bottom.jpg" width="204" height="23" border="0" alt="" />
-				</div>
-				
-			  <p>&nbsp;</p>
-			  
-			  <div id="WTPBlock">
-			    <form name="watchThatPageForm" 
-			          method="post" 
-			          action="http://www.watchthatpage.com/checkExtern.jsp" 
-			          onSubmit="getMyURL()">
-				   <script language="JavaScript">
-				     <!--
-				     function getMyURL()
-					  {
-        			    document.watchThatPageForm.url.value = document.location;
-				     }
-				     // -->
-			      </script>
-               <input type=hidden name="url" value="http://jaywheeler.users.sourceforge.net/Documents/index.html">
-               <input type=image src="../images/stickerBareEye.png" border="0" 
-                      alt="Get a notification from WatchThatPage.com when this page changes. The email will contain the differences."
-                      name="Get a notification from WatchThatPage.com when this page changes. The email will contain the differences.">
-             </form>
-           </div>
+              <br />
+              <a class="darkGreen" href="http://ewsdocker.github.io/alpine-nginx-pkgcache"><b>alpine-nginx-pkgcache</b></a><br />
+              <a class="darkGreen" href="http://ewsdocker.github.io/alpine-pkgcache-client"><b>alpine-pkgcache-client</b></a><br />
 
-			  <p>&nbsp;</p>
-			  <p>&nbsp;</p>
+              <br />
+              <a class="darkGreen" href="http://ewsdocker.github.io/alpine-pull-gallery"><b>alpine-pull-gallery</b></a><br />
 
-			</div>
-
-			<div id="contenttext">
-
-				<span class="title_blue">Open Source Projects</span>
-				<br />
-				<span class="subtitle_gray">Hosted by <a href="http://sourceforge.net">SourceForge</a></span>
-				<br />
-				<br />
-				<div class="project_text" style="text-align:justify;">
-
-          		  <br />
-          		  <img src="../images/blue.gif" style="text-align:center;" />
-		  		  <br />
-
-		  		  <p>
-		    	    <img style="vertical-align:middle;" src="taxEstimator.png" height="128" width="128" />
-		    	    <span class="subtitle"><a href="http://taxestimator.sourceforge.net/"
-		         	                          target="_blank">EarthWalk Software taxEstimator</a></span>
-		  		  </p>
-          		    <p>
-            		  <span class="subTaxestimator">taxEstimator</span> is a GUI application to display the results of
-            		  United States federal personal income tax refund estimates computed by the 
-            		  <span class="taxEngineLibrary">
-            		  <a href="http://taxengine.sourceforge.net/original/" target="_blank">RushTaxOS taxEngine Library</a></span>. 
-            		  It is written in 
-		    		  <span class="msSoftware">Microsoft C#</span>, using 
-		    		  <span class="msSoftware">.NET Framework 3.5</span>.
-		  			</p>
-	      		  <ul>
-	        	    <li class="indent">
-		      		  <a href="http://taxestimator.sourceforge.net/"
-		         	     target="_blank"
-		         		 style="text-decoration:none;">http://taxestimator.sourceforge.net/</a>
-		    	    </li>
-	      		  </ul>
-
-          		  <br />
-          		  <img src="../images/blue.gif" style="text-align:center;" />
-		  		  <br />
-
-		  		  <p>
-		    	    <img style="vertical-align:middle;" src="taxengine.png" height="128" width="128" />
-		    	    <span class="subtitle"><a href="http://taxengine.sourceforge.net/original/"
-		         	                          target="_blank">RushTaxOS taxEngine Library</a></span>
-		  		  </p>
-		  		  <p>
-		    		The <span class="taxEngineLibrary">RushTaxOS taxEngine Library</span> 
-		    		is an open source computational library written in object-oriented PHP 5.  It was 
-		    		designed to perform United States federal personal income tax refund estimate calculations.
-		  		  </p>
-		  		  <p>
-		    	    The <span class="taxEngineLibrary">RushTaxOS taxEngine</span> project page is 
-		    	    located on Sourceforge at the following address:
-		  		  </p>
-	      		  <ul>
-	        	    <li class="indent">
-		      		  <a href="http://sourceforge.net/projects/taxengine/"
-		         	     target="_blank"
-		         		 style="text-decoration:none;">http://sourceforge.net/projects/taxengine/</a>
-		    	    </li>
-	      		  </ul>
-		  		  <p>
-		    	    The <span class="taxEngineLibrary">RushTaxOS taxEngine Library</span> is available on 
-		    		Sourceforge at the following address:
-		  		  </p>
-	      		  <ul>
-	        	    <li class="indent">
-		      		  <a href="https://taxengine.svn.sourceforge.net/svnroot/taxengine/branches/Release-1.0.0/tags/Snapshot-1.0.0/"
-		         	     target="_blank"
-		         		 style="text-decoration:none;">https://taxengine.svn.sourceforge.net/svnroot/taxengine/branches/Release-1.0.0/tags/Snapshot-1.0.0/</a>
-		    	    </li>
-	      		  </ul>
-
-		  		  <p>
-		    		The <span class="taxEngineLibrary">RushTaxOS taxEngine Library</span> comes 
-		    		pre-packaged with a <span class="subSOAP">SOAP</span> server, named
-		    		<span class="taxEngineServer">taxEngineServer</span>, designed to provide a sample of
-		    		how to use the <span class="taxEngineLibrary">RushTaxOS taxEngine Library</span> 
-		    		for an income tax refund estimate SOAP-based web service.
-		  		  </p>
-
-          		  <br />
-          		  <img src="../images/blue.gif" style="text-align:center;" />
-		  		  <br />
-
-		  		  <p>
-		    	    <img style="vertical-align:middle;" src="dictionary.png" height="128" width="128" />
-		    	    <span class="subtitle"><a href="http://cgidictionary.sourceforge.net/"
-		         	                          target="_blank">EarthWalk Software dictionary</a></span>
-		  		  </p>
-		  		  <p>
-					The <span style="font-weight:bold;">Dictionary Server Protocol (DICT)</span> is a TCP transaction based query/response protocol 
-					that allows a client to access dictionary definitions from a set of natural language 
-					dictionary databases. It is designed to provide access to multiple databases of 
-					English words. A <span style="font-weight:bold;">DICT</span> server is only an interface between client programs and the 
-					dictionary databases.
-				  </p>
-				  <p>
-					<span style="font-weight:bold;">dictionary</span> is a 
-					<span style="font-weight:bold;">Perl cgi script</span> which provides browser 
-					access to <span style="font-weight:bold;">DICT</span> servers via 
-					an HTML form-based interface which can be used to fetch dictionary definitions 
-					and to match whole or partial words and word lists. 
-					The browser-based interface allows selection of servers, available 
-					server-based dictionary databases, and word matching strategies.
-		  		  </p>
-	      		  <ul>
-	        	    <li class="indent">
-		      		  <a href="http://cgidictionary.sourceforge.net/"
-		         	     target="_blank"
-		         		 style="text-decoration:none;">http://cgidictionary.sourceforge.net/</a>
-		    	    </li>
-	      		  </ul>
-
-          		  <br />
-          		  <img src="../images/blue.gif" style="text-align:center;" />
-		  		  <br />
-
-		  		  <p>
-		    	    <img style="vertical-align:middle;" src="perl.gif" height="90" width="90" />
-		    	    <span class="subtitle"><a href="http://ewsperl.sourceforge.net/"
-		         	                          target="_blank">EarthWalk Software ewsperl</a></span>
-		  		  </p>
-		  		  <p>
- 					<span style="font-weight:bold;">ewsperl</span> is a collection of object-oriented 
- 					<span style="font-weight:bold;">Perl</span> class modules. 
- 					Included is a class to convert a 
- 					process to a daemon, a class which wraps 
- 					<span style="font-weight:bold;">Perl</span> file i/o functions in a class object, 
- 					a base class to load environment variables, program arguements and user-defined variables 
- 					into a common, shared object...
-		  		  </p>
-	      		  <ul>
-	        	    <li class="indent">
-		      		  <a href="http://ewsperl.sourceforge.net/"
-		         	     target="_blank"
-		         		 style="text-decoration:none;">http://ewsperl.sourceforge.net/</a>
-		    	    </li>
-	      		  </ul>
-
-          		  <br />
-          		  <img src="../images/blue.gif" style="text-align:center;" />
-		  		  <br />
-
-		  		  <p>
-		    	    <img style="vertical-align:middle;" src="Frank-R1.gif" height="100" width="100" />
-		    	    <a name="HauntedHollow"></a>
-		    	    <span class="subtitle"><a href="../Halloween"
-		         	                          target="_top">Haunted Hollow</a></span>
-		  		  </p>
-		  		  <p>
- 					<span style="font-weight:bold;">Haunted Hollow</span> is an 
- 					<span style="font-style:italic;">animated-sprite animation</span>
- 					created completely using 
- 					<span style="font-weight:bold;">JavaScript</span>,
- 					<span style="font-weight:bold;">DOM</span> and 
- 					<span style="font-weight:bold;">CSS2</span>.  I wrote it in the Summer of 2003 as an
- 					entry page to an on-line store front for the up-coming Halloween shopping season.  I 
- 					have used it on every <span style="font-weight:bold;">eCommerce</span> site which 
- 					I have created since.
-				  </p>
-				  <p>
-				    The scene background is a trail meandering through a dark woods on a 
-				    moonlit night.  A haunted castle on a hill appears out of the middle of the screen,
-				    complete with lightning strikes, only to disappear again.  There are 7 sprites 
-				    (inanimate objects) which appear at random and float
-				    about the screen for a random period, and then disappear.
-				    There is an orange ghoul, a black bat
-				    with golden eyes, an invisible man (all that you can see is a pair of evil eyes), 
-				    a ghost, a skull, and a jack-o'latern.
-				  </p>
-				  <p>
-				    While this is going on, an animated Frankenstein's monster marches around the screen
-				    on a random walk.
-				    Keep an eye out for the critters in the tree tops.
-				  </p>
-				  <p>
-				    There's a witch on a broomstick that follows the mouse to wherever it moves, leaving 
-				    a trail of 6 images, which try to keep up with the mouse.
-				  </p>
-				  <p>
-				    Clicking the mouse on any object (except the background) will exit the animation and
-				    return to this page.
-				  </p>
-				  <p>
-				    The purpose of this project was <span style="font-weight:bold;">not</span> to design 
-				    an animated entry page to an
-				    Internet-based store front, but rather to learn about the 
-				    <span style="font-weight:bold;">Document Object Model (DOM)</span> and its capabilities,
-				    as well as to learn more about 
-				    <span style="font-weight:bold;">Object Oriented Programming (OOP)</span> in 
-				    <span style="font-weight:bold;">JavaScript</span>
-				    and to explore the capabilities of 
-				    <span style="font-weight:bold;">Cascading Style Sheets (CSS)</span>.
-				  </p>
-				  <p>
-				    Not wishing to spend a lot of time trying to learn the intricacies 
-				    (or idiosyncrasies) of each individual 
-				    browser, I chose instead to utilize 
-				    <span style="font-weight:bold;">Cross Browser Emulator</span>, a great cross-browser 
-				    library (no longer available), in order to achieve browser independence.
-				  </p>
-				  <p>
-				    <span style="font-weight:bold;">Haunted Hollow</span> has been tested for use with
-				     the latest releases of 
-				    <span style="font-weight:bold;">Netscape Gecko</span> browsers 
-				    (such as <span style="font-style:italic;">Firefox</span>, 
-				    <span style="font-style:italic;">Sea Monkey</span> and 
-				    <span style="font-style:italic;">Galeon</span>), 
-				    <span style="font-weight:bold;">Opera</span> and
-				    <span style="font-weight:bold;">Microsoft Internet Explorer</span>.
-				  </p>
-				  <p>
-				    This is not an active project.  It is not hosted in the open source repository.
-				    Although I offer no support for this project, I am making this 
-				    software available for educational purposes.  It may be downloaded from this
-				    location:
-				    </p>
-				    <ul>
-				      <li class="indent"><a href="hauntedHollow.zip">hauntedHollow</a></li>
-				    </ul>
-				    <p>
-					Once you have the file downloaded and unzipped, read the ReadMe.txt 
-					file for information on how to install and configure the application.  Keep the directory structure
-					as it is in the zip file, or things won't work very well.
-				  </p>
-          		  <br />
-          		  <img src="../images/blue.gif" style="text-align:center;" />
-		  		  <br />
-
-				</div> <!-- project_text -->
-
-			    <p>&nbsp;</p>
-			    
-			</div>  <!-- contenttext -->
-
-			<br />
-			<br />
-
-			<div class="footer">
-				<br />
-				<a href="../index.html">Home</a> | <a 
-				   href="../Documents">Documents</a> | <a 
-				   href="http://www.earthwalkvillage.com">EarthWalk Software</a><span 
-				   class="EWSoftware_Blue">. Based on a design by </span><a href="http://www.winkhosting.com/">Wink Hosting</a><span class="EWSoftware_Blue">.</span>
-			</div>
-
-				<br />
-			   <div class="WTPBlock">
-		        <form name="watchThatPageForm" method="post" action="http://www.watchthatpage.com/checkExtern.jsp" onSubmit="getMyURL()">
-		          <script language="JavaScript">
-			       <!--
-                  function getMyURL()
-                  {
-                    document.watchThatPageForm.url.value = document.location;
-                  }
-                // -->
-                </script>
-                <input type=hidden name="url" value="http://jaywheeler.users.sourceforge.net/Documents/index.html">
-                <input type=image src="../images/stickerButton.png" border="0" 
-                       alt="Get a notification from WatchThatPage.com when this page changes. The email will contain the differences." 
-                       name="Get a notification from WatchThatPage.com when this page changes. The email will contain the differences.">
-              </form>
             </div>
-				<br />
 
-		</div>
+          </div>
 
+          <div class="leftMenuBottom darkGreen">
+            <img src="images/table_bottom.jpg" width="204" height="23" border="0" alt="" />
+          </div> 
+        <!-- --------------------- -->
+        <!--    Left Panel Menu    -->
+        <!-- --------------------- -->
+
+              <br />
+
+        <!-- --------------------- -->
+        <!--    Left Panel Menu    -->
+        <!-- --------------------- -->
+        <!--     Debian       -->
+        <!-- --------------------- -->
+          <div class="leftMenuTop">
+            <span class="leftMenuPanel blue">Debian</span>
+          </div>
+
+          <div class="leftMenuContent">
+
+            <div class="leftMenuText blue">
+
+              <br />
+
+              <a href="http://ewsdocker.github.io/debian-base">debian-base</a><br />
+              <a href="http://ewsdocker.github.io/debian-base-gui">debian-base-gui</a><br />
+
+              <br />
+
+              <a href="http://ewsdocker.github.io/debian-eclipse-cpp">debian-eclipse-cpp</a><br />
+              <a href="http://ewsdocker.github.io/debian-eclipse-javascript">debian-eclipse-javascript</a><br />
+              <a href="http://ewsdocker.github.io/debian-eclipse-php"><b>debian-eclipse-php</b></a><br />
+
+              <br />
+
+              <a href="http://ewsdocker.github.io/debian-gimp">debian-gimp</a><br />
+
+              <br />
+
+              <a href="http://ewsdocker.github.io/debian-kaptain">debian-kaptain</a><br />
+              <a href="http://ewsdocker.github.io/debian-kaptain-menu">debian-kaptain-menu</a><br />
+
+              <br />
+
+              <a href="http://ewsdocker.github.io/debian-libreoffice">debian-libreoffice</a><br />
+
+              <br />
+
+              <a href="http://ewsdocker.github.io/debian-openjre">debian-openjre</a><br />
+
+              <br />
+              <a href="http://ewsdocker.github.io/debian-pull-gallery"><b>debian-pull-gallery</b></a><br />
+              <a href="http://ewsdocker.github.io/debian-pull-tumblr">debian-pull-tumblr</a><br />
+
+            </div>
+
+          </div>
+
+          <div class="leftMenuBottom blue">
+            <img src="images/table_bottom.jpg" width="204" height="23" border="0" alt="" />
+          </div> 
+        <!-- --------------------- -->
+        <!--    Left Panel Menu    -->
+        <!-- --------------------- -->
+
+          <br />
+          <p>
+            &nbsp;
+          </p>
 	</div>
+        <!-- ---------------- -->
+        <!--    Left Panel    -->
+        <!-- ---------------- -->
+
+           <br />
+
+      <!-- -------------------- -->
+      <!--    contentText       -->
+      <!-- -------------------- -->
+        <div id="contentText">
+         <span class="title blue">ewsdocker - Open Source Docker Containers</span>
+          <br />
+          <span class="subtitle gray">Hosted by <a href="http://github.com">GitHub</a></span>
+
+          <br />
+          <br />
+
+        <!-- ---------------- -->
+        <!--  construction    -->
+        <!-- ---------------- -->
+          <div id="construction">
+            <div class=".construction"><img src="images/construction.gif" style="width=144px;height=50px;" /></div>
+            <span class="red">Under Construction</span>
+	  </div>
+        <!-- ---------------- -->
+        <!--  construction    -->
+        <!-- ---------------- -->
+
+        <!-- ------------- -->
+        <!--    bodyText   -->
+        <!-- ------------- -->
+          <div class="gray body" style="text-align:justify;">
+
+	        <p style="text-align: center;"><img src="images/bar_blue.gif" /></p>
+
+            <!-- --------------------- -->
+            <!--      block            -->
+            <!-- --------------------- -->
+            <div class="blue block">
+
+              <div id="blockCentered">
+                <a href="https://ewsdocker.github.io/debian-pull-gallery"><img 
+                         src="images/ripme-xsm.png" 
+                         style="vertical-align:middle;border-style:none;" /></a>&nbsp;&nbsp;
+                <span style="font-size:16px;font-weight:bold;">Featured Project:</span> &nbsp; 
+                      <a href="https://ewsdocker.github.io/debian-pull-gallery"> 
+                      <span class="undecorated" style="text-decoration:none;">debian-pull-gallery</span></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+	          </div>
+
+	          <p>
+            	<b>RipMeApp/ripme</b> is an album ripper supporting over 100 gallery websites
+            	out-of-the-box, featuring quick downloads of all images in an album in both
+            	interactive and batch modes.
+	          </p>
+	          
+	          <p>
+	            <b>debian-pull-gallery</b> creates a GUI desktop in a <b>Docker</b> container
+	            allowing the application to run on (nearly) any <b>Docker</b> host without
+	            worrying about operating system versions or software dependencies, while
+	            providing the same desktop experience as running on a native Linux host.
+	          </p>
+
+            </div>
+            <!-- --------------------- -->
+            <!--      block            -->
+            <!-- --------------------- -->
+
+	        <p style="text-align: center;"><img src="images/bar_green.gif" /></p>
+
+            <!-- --------------------- -->
+            <!--      block            -->
+            <!-- --------------------- -->
+            <div class="darkGreen block">
+
+              <div id="blockCentered">
+ 	            <span style="font-size:16px; font-weight:bold;">Featured Project:</span> &nbsp; 
+ 	                  <a href="https://ewsdocker.github.io/alpine-nginx"><span
+ 	                     style="font-weight:bold;text-decoration:none;">alpine-nginx</span></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+	          </div>
+
+	          <p>
+            	The <b>alpine-nginx</b> docker server image is based on the latest 
+            	<i>NGINX</i> mainline (<b>edge</b>) version in an  <i>Alpine Linux</i>
+            	<b>edge</b> docker image.
+	          </p>
+
+            </div>
+            <!-- --------------------- -->
+            <!--      block            -->
+            <!-- --------------------- -->
+
+	        <p style="text-align: center;"><img src="images/bar_red.gif" /></p>
+
+          </div>
+        <!-- ------------- -->
+        <!--    bodyText   -->
+        <!-- ------------- -->
+
+	      <p>&nbsp;</p>
+
+        </div>
+      <!-- ----------------- -->
+      <!--    contentText    -->
+      <!-- ----------------- -->
+
+        <br />
+        <br />
+
+      <!-- ------------ -->
+      <!--    Footer    -->
+      <!-- ------------ -->
+        <div class="footer">
+          <br />
+          <a  href="https://hub.docker.com/u/ewsdocker/">Docker Hub</a> | <a 
+              href="https://github.com/ewsdocker?tab=repositories">Git Hub</a> | <a 
+	          href="https://github.com/ewsdocker/ewsdocker.github.io/wiki">Wiki</a>
+	  <br />
+	  <div class="footerCopyright">Copyright © 2018. EarthWalk Software.</div>
+        </div> 
+      <!-- ------------ -->
+      <!--    Footer    -->
+      <!-- ------------ -->
+
+      </div>
+      <!-- ------------- -->
+      <!--    content    -->
+      <!-- ------------- -->
+
+    </div>
+  <!-- ------------------------ -->
+  <!--     The whole page       -->
+  <!-- ------------------------ -->
 
   </body>
 

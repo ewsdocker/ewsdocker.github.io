@@ -14,7 +14,7 @@
 	  var bannerDir		= 'HauntedHollow/Banners/';
 	  var affiliateDir  = 'HauntedHollow/AffiliateBanners/';
 
-	  var storeURL      = 'ewsdocker.html';
+	  var storeURL      = 'images/index.html';
 
   	  ////////////////////////////////////////////////////////////////////////
   	  //

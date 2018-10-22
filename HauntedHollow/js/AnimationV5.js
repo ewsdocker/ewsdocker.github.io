@@ -124,7 +124,6 @@
 	  return false;
 	}
 
-//alert('createAnimationObject ' + appId);
 	with (app)
 	{
 	  hide();

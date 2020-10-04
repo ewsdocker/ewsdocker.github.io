@@ -104,7 +104,7 @@
 		afURLParams[afURLParams.length] = cbeGetURLArguments();
 		if (afURLParams.length != 0)
 		{
-			storeURL=afURLParams[0] + "/" + afURLParams[1];
+			storeURL=afURLParams[0];
         }
 
 		/////////////////////////////////////////////////////////////////////////////

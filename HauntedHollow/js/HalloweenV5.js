@@ -25,6 +25,7 @@
 	  {
 	    var afFrameList = new Array();
 		var afParams = new Array();
+		var afURLParams = new Array();
 
         if (animationVersion == null)
 		{
@@ -100,6 +101,11 @@
 		//
 		/////////////////////////////////////////////////////////////////////////////
 		/////////////////////////////////////////////////////////////////////////////
+		afURLParams[afURLParams.length] = cbeGetURLArguments();
+		if (afURLParams.length != 0)
+		{
+			storeURL=afURLParams[0] + "/" + afURLParams[1];
+        }
 
 		/////////////////////////////////////////////////////////////////////////////
 		//
@@ -115,7 +121,7 @@
 					   		 'boxInit(tableIndex)',            // aFrameInit
 					   		 'idApplication',			   	   // aFrameParent
 					   		 null,  						   // aFrameContentUrl
-					   		 storeURL,		   	   		   // aFrameContentLink
+					   		 storeURL,		   	   		       // aFrameContentLink
 					   		 true,						   	   // aFrameVisible
 					   		 '#0000ff',					   	   // aFrameColor
 					   		 'transparent',				   	   // aFrameBackground
@@ -139,7 +145,7 @@
 					   		 'contentInit(tableIndex)',        // aFrameInit
 					   		 'idContainer1',				   // aFrameParent
 					   		 null,      	   				   // aFrameContentUrl
-					   		 storeURL,	  	     		   // aFrameContentLink
+					   		 storeURL,	  	     		       // aFrameContentLink
 					   		 true,						   	   // aFrameVisible
 					   		 '#866F86',					   	   // aFrameColor
 					   		 'transparent',				   	   // aFrameBackground

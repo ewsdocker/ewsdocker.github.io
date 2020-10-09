@@ -14,7 +14,8 @@
 	  var bannerDir		= 'HauntedHollow/Banners/';
 	  var affiliateDir  = 'HauntedHollow/AffiliateBanners/';
 
-	  var storeURL      = 'images/index.html';
+	  var storeURL      = ''; //'images/index.html';
+      var hIndex        = -1;
 
   	  ////////////////////////////////////////////////////////////////////////
   	  //
@@ -25,7 +26,7 @@
 	  {
 	    var afFrameList = new Array();
 		var afParams = new Array();
-		var afURLParams = new Array();
+//		var afURLParams = new Array();
 
         if (animationVersion == null)
 		{
@@ -36,6 +37,15 @@
 		{
 	      alert('wrong af loaded: ' + animationVersion);
 	    }
+
+	    ////////////////////////////////////////////////////////////////////////
+
+//       if (location.href.indexOf('?') != -1)
+//       {
+
+            storeUrl = window.location.href.split("?").pop();
+alert ('storeUrl: ' + storeUrl);
+//       }
 
 	    ////////////////////////////////////////////////////////////////////////
 	    //
@@ -101,11 +111,14 @@
 		//
 		/////////////////////////////////////////////////////////////////////////////
 		/////////////////////////////////////////////////////////////////////////////
-		afURLParams[afURLParams.length] = cbeGetURLArguments();
-		if (afURLParams.length != 0)
-		{
-			storeURL=afURLParams[0];
-        }
+        
+//		afURLParams.length = 0;
+
+//		afURLParams[afURLParams.length] = cbeGetURLArguments();
+//		if (afURLParams.length != 0)
+//		{
+//			storeURL=afURLParams[0];
+//		}
 
 		/////////////////////////////////////////////////////////////////////////////
 		//
@@ -1469,7 +1482,7 @@
 	  //////////////////////////////////////////////////////////////////////////
 	  function postInitialization()
 	  {
-	    var frameIndex;
+//	    var frameIndex;
 		
 	    appMove(0,   // appX
 				0,   // appY

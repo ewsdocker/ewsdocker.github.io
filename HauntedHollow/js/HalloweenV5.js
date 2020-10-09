@@ -14,7 +14,7 @@
 	  var bannerDir		= 'HauntedHollow/Banners/';
 	  var affiliateDir  = 'HauntedHollow/AffiliateBanners/';
 
-	  var storeURL      = ''; //'images/index.html';
+	  var storeURL      = window.location.href.split("?").pop();
       var hIndex        = -1;
 
   	  ////////////////////////////////////////////////////////////////////////
@@ -43,7 +43,7 @@
 //       if (location.href.indexOf('?') != -1)
 //       {
 
-            storeUrl = window.location.href.split("?").pop();
+//            storeUrl = window.location.href.split("?").pop();
 alert ('storeUrl: ' + storeUrl);
 //       }
 

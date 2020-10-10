@@ -14,9 +14,6 @@
 	  var bannerDir		= 'HauntedHollow/Banners/';
 	  var affiliateDir  = 'HauntedHollow/AffiliateBanners/';
 
-	  var storeURL      = window.location.href.split("?").pop();
-      var hIndex        = -1;
-
   	  ////////////////////////////////////////////////////////////////////////
   	  //
   	  //     animationCreateObjects
@@ -26,7 +23,6 @@
 	  {
 	    var afFrameList = new Array();
 		var afParams = new Array();
-//		var afURLParams = new Array();
 
         if (animationVersion == null)
 		{
@@ -40,12 +36,9 @@
 
 	    ////////////////////////////////////////////////////////////////////////
 
-//       if (location.href.indexOf('?') != -1)
-//       {
+//	  	var storeURL      = "images/index.html"
 
-//            storeUrl = window.location.href.split("?").pop();
-alert ('storeUrl: ' + storeUrl);
-//       }
+	    var storeURL = window.location.href.split("?").pop();
 
 	    ////////////////////////////////////////////////////////////////////////
 	    //
@@ -112,14 +105,6 @@ alert ('storeUrl: ' + storeUrl);
 		/////////////////////////////////////////////////////////////////////////////
 		/////////////////////////////////////////////////////////////////////////////
         
-//		afURLParams.length = 0;
-
-//		afURLParams[afURLParams.length] = cbeGetURLArguments();
-//		if (afURLParams.length != 0)
-//		{
-//			storeURL=afURLParams[0];
-//		}
-
 		/////////////////////////////////////////////////////////////////////////////
 		//
 		//    Copyright Block

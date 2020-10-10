@@ -61,6 +61,11 @@
   var sequenceTable = new Array();
   var frameTable = new Array();
 
+//  var storeUrl = "image/index.html"; //'window.location.href.split('?').pop();
+
+//alert('storeUrl: ' + storeUrl);
+
+
   //////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////
   //
@@ -103,7 +108,9 @@
    	  if (afMouse == null) afMouse = new mouseElement();
 
       if (! createAnimationObject()) return;
+
 	  animationCreateObjects();
+
       initializeAnimationWindow();
 	  postInitialization();
   }
@@ -173,6 +180,7 @@
 	  
 	setTimeout('startAnimation()', 100);
     window.cbe.addEventListener('resize', onResize, false);
+
   }
 
   //////////////////////////////////////////////////////////////////////////
@@ -1319,7 +1327,7 @@
 	
     this.valid 				= true;
 	this.selected 			= false;
-  }
+ }
 
   //////////////////////////////////////////////////////////////////////////
   //

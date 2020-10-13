@@ -61,11 +61,6 @@
   var sequenceTable = new Array();
   var frameTable = new Array();
 
-//  var storeUrl = "image/index.html"; //'window.location.href.split('?').pop();
-
-//alert('storeUrl: ' + storeUrl);
-
-
   //////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////
   //
@@ -258,17 +253,7 @@
   	afTimer.length = 0;
 	afTimerRef = null;
 	afTimerMSec = afTimerDuration;
-/*
-	if (is.nav4 || is.opera) 
-	{
-      location.replace(location.href);
-	}
-	else
-    {
-      if (modReset.length > 0) resetModules();
-	  windowOnload();
-    }
-*/
+
     location.replace(location.href);
 	afResizing = false;
   }
@@ -528,7 +513,6 @@
 	  {
 		if (active && (event.cbeTarget.id == id))
 		{
-//alert('processClickEvent ' + cbeEventPhase[event.eventPhase] + ', bubble ' + bubble);
 		  if ((cbeEventPhase[event.eventPhase] == 'AT_TARGET') ||
 		      (bubble && 
 			   (cbeEventPhase[event.eventPhase] == 'BUBBLING_PHASE'))) eval(callback);
@@ -1431,7 +1415,6 @@
   //////////////////////////////////////////////////////////////////////////
   function backgroundInit(tableIndex)
   {
-//alert('backgroundInit index ' + tableIndex);
     with (appTable[tableIndex])
 	{
 	  var frameId = cbeGetElementById(id).cbe;
@@ -1466,7 +1449,6 @@
   //////////////////////////////////////////////////////////////////////////
   function backgroundTimeout(sequenceAtom)
   {
-//alert('backgroundTimeout sequence ' + sequenceAtom.name);
     //
 	//  hide current background
 	//
@@ -1536,7 +1518,6 @@
   ////////////////////////////////////////////////////////////////////////
   function boxInit(tableIndex)
   {
-//alert('boxInit tableIndex = ' + tableIndex);
 	with (appTable[tableIndex])
 	{
 	  var frameId = cbeGetElementById(id).cbe;
